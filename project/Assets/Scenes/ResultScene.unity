@@ -1496,12 +1496,13 @@ MonoBehaviour:
   C_icon: {fileID: 2800000, guid: 25370357f093ced45b3420e4700ea08c, type: 3}
   F_icon: {fileID: 2800000, guid: 52495ada9fe558f42967d52ed9169739, type: 3}
   result_icon: {fileID: 1871991807}
-  perfect_score: {fileID: 80779052}
-  great_score: {fileID: 998059372}
-  good_score: {fileID: 781488716}
-  bad_score: {fileID: 642911148}
-  miss_score: {fileID: 990864509}
-  accuracy: {fileID: 1827701120}
+  score_texts:
+  - {fileID: 80779052}
+  - {fileID: 998059372}
+  - {fileID: 781488716}
+  - {fileID: 642911148}
+  - {fileID: 990864509}
+  - {fileID: 1827701120}
 --- !u!1 &990864507
 GameObject:
   m_ObjectHideFlags: 0
