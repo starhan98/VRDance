@@ -15,7 +15,7 @@ public class NoteManager : MonoBehaviour
 
 	int bpm = 120;
 	double currentTime = 0d;
-	double startOffset = 0d;
+	double startOffset = 3d;
     
     JudgeManager judgeManager;
     JudgeViewer judgeViewer;
