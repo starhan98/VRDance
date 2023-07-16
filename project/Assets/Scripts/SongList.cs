@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SongList : MonoBehaviour
 {
@@ -18,8 +19,11 @@ public class SongList : MonoBehaviour
     public AudioSource sfx_player;
     public AudioClip shift_sound;
     public AudioClip select_sound;
+    public AudioClip fadeout_sound;
     public float speed = 1.0f;
     public int mode = 0;
+    public Image panel;
+
     
 
 
@@ -171,11 +175,12 @@ public class SongList : MonoBehaviour
         } 
         else {
             // goto next scene;
+            mv_player.Stop();
+            StartCoroutine(FadeOut());
             GameObject SelectedSong = Instantiate(songs[cur_song_index]);
             SelectedSong.name = "SelectedSong";
             SelectedSong.GetComponent<SongInfo>().speed = speed;
             SelectedSong.GetComponent<SongInfo>().mode = mode;
-            SceneManager.LoadScene("GameScene");
             DontDestroyOnLoad(SelectedSong);
         }
     }
@@ -190,6 +195,23 @@ public class SongList : MonoBehaviour
         } else {
             return;
         }
+    }
+
+    
+    private IEnumerator FadeOut() {
+
+        float t = 0f;
+        float duration = 1.5f;
+        sfx_player.clip = fadeout_sound;
+        sfx_player.Play();
+
+        while (t < 1f) {
+            t += Time.deltaTime / duration;
+            panel.color = new Color(0, 0, 0, t);
+            yield return null;
+        }
+        panel.color = new Color(0, 0, 0, 255);
+        SceneManager.LoadScene("GameScene");
     }
 
 }
