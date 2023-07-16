@@ -18,6 +18,10 @@ public class SongList : MonoBehaviour
     public AudioSource sfx_player;
     public AudioClip shift_sound;
     public AudioClip select_sound;
+    public float speed = 1.0f;
+    public int mode = 0;
+    
+
 
     private int select_mode = 0; // 0: select song, 1: select mode, 2: select speed
 
@@ -60,16 +64,21 @@ public class SongList : MonoBehaviour
             } else if (select_mode == 1) {
                 if (song_mode.text == "<color=green>Practice</color>    |    Ranked") {
                     song_mode.text = "Practice    |    <color=yellow>Ranked</color>";
+                    mode = 1;
                 } else {
                     song_mode.text = "<color=green>Practice</color>    |    Ranked";
+                    mode = 0;
                 }
             } else if (select_mode == 2) {
                 if (song_speed.text == "0.5x    |    <color=yellow>1.0x</color>    |    1.5x") {
                     song_speed.text = "<color=green>0.5x</color>    |    1.0x    |    1.5x";
+                    speed = 0.5f;
                 } else if (song_speed.text == "<color=green>0.5x</color>    |    1.0x    |    1.5x") {
                     song_speed.text = "0.5x    |    1.0x    |    <color=red>1.5x</color>";
+                    speed = 1.5f;
                 } else {
                     song_speed.text = "0.5x    |    <color=yellow>1.0x</color>    |    1.5x";
+                    speed = 1.0f;
                 }
             } 
         } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
@@ -88,16 +97,21 @@ public class SongList : MonoBehaviour
             } else if (select_mode == 1) {
                 if (song_mode.text == "<color=green>Practice</color>    |    Ranked") {
                     song_mode.text = "Practice    |    <color=yellow>Ranked</color>";
+                    mode = 1;
                 } else {
                     song_mode.text = "<color=green>Practice</color>    |    Ranked";
+                    mode = 0;
                 }
             } else if (select_mode == 2) {
                 if (song_speed.text == "0.5x    |    <color=yellow>1.0x</color>    |    1.5x") {
                     song_speed.text = "0.5x    |    1.0x    |    <color=red>1.5x</color>";
+                    speed = 1.5f;
                 } else if (song_speed.text == "<color=green>0.5x</color>    |    1.0x    |    1.5x") {
                     song_speed.text = "0.5x    |    <color=yellow>1.0x</color>    |    1.5x";
+                    speed = 1.0f;
                 } else {
                     song_speed.text = "<color=green>0.5x</color>    |    1.0x    |    1.5x";
+                    speed = 0.5f;
                 }
             } 
         } else if (Input.GetKeyDown(KeyCode.Escape)) {
@@ -157,7 +171,10 @@ public class SongList : MonoBehaviour
         } 
         else {
             // goto next scene;
-            SongInfo SelectedSong = Instantiate(songs[cur_song_index].GetComponent<SongInfo>());
+            GameObject SelectedSong = Instantiate(songs[cur_song_index]);
+            SelectedSong.name = "SelectedSong";
+            SelectedSong.GetComponent<SongInfo>().speed = speed;
+            SelectedSong.GetComponent<SongInfo>().mode = mode;
             SceneManager.LoadScene("GameScene");
             DontDestroyOnLoad(SelectedSong);
         }

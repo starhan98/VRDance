@@ -7,11 +7,13 @@ using UnityEngine.Video;
 public class SongInfo : MonoBehaviour
 {
     public string name;
-    public string difficulty;
+    public string difficulty; // EASY, NORMAL, HARD
     public string feature;
     public VideoClip mv;
     public VideoClip shorts;
     private bool on_move = false;
+    public int mode; // 0: practice, 1: ranked
+    public float speed; // 0.5x, 1.0x, 1.5x
 
     public bool shiftRight() {
         if (on_move) {
