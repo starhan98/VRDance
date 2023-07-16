@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public Image panel;
 
     public HpBarManager hpBarManager;
+    // public Image panel;
 
 
     void Start() {
@@ -103,4 +104,5 @@ public class GameManager : MonoBehaviour
         panel.color = new Color(0, 0, 0, 1);
         SceneManager.LoadScene("ResultScene");
     }
+
 }
