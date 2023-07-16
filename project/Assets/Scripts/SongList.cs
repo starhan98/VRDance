@@ -46,6 +46,7 @@ public class SongList : MonoBehaviour
             song_difficulty.color = Color.green;
         }
         song_feature.text = cur_song.feature;
+        panel.enabled = false;
     }
 
 
@@ -223,6 +224,7 @@ public class SongList : MonoBehaviour
 
         float t = 0f;
         float duration = 1.5f;
+        panel.enabled = true;
         sfx_player.clip = fadeout_sound;
         sfx_player.Play();
 
