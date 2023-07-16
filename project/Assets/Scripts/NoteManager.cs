@@ -16,6 +16,7 @@ public class NoteManager : MonoBehaviour
 	int bpm = 120;
 	double currentTime = 0d;
 	double startOffset = 3d;
+    bool started = false;
     
     JudgeManager judgeManager;
     JudgeViewer judgeViewer;
@@ -31,6 +32,13 @@ public class NoteManager : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
+        if (!started) {
+            if (currentTime >= startOffset) {
+                started = true;
+                currentTime -= startOffset;
+            }
+            return;
+        }
 
         if (currentTime >= 60d / bpm) {
         	GameObject t_note = Instantiate(NotePrefab, NoteAppearLocation.position, Quaternion.identity);
