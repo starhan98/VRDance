@@ -16,6 +16,9 @@ public class SongInfo : MonoBehaviour
     public float speed; // 0.5x, 1.0x, 1.5x
     public Texture stop_pos;
     public Texture thumbnail;
+    public int bpm;
+    public string jsonfile_name;
+    public double start_offset;
 
     public bool shiftRight() {
         if (on_move) {

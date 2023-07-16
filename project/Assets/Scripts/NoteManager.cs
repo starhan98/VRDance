@@ -30,6 +30,11 @@ public class NoteManager : MonoBehaviour
         judgeManager = GetComponent<JudgeManager>();
         judgeViewer = GetComponent<JudgeViewer>();
         hpBarManager = GameObject.Find("HpBar").GetComponent<HpBarManager>();
+        SongInfo selected_song = GameObject.Find("SelectedSong").GetComponent<SongInfo>();
+        jsonFile = selected_song.jsonfile_name;
+        bpm = selected_song.bpm;
+        startOffset = selected_song.start_offset;
+
         ReadJson();
     }
 
