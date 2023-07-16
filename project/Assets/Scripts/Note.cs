@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Note : MonoBehaviour
 {
-	public float noteSpeed = 400;
+	float noteSpeed = 1500;
 	private List<Vector3> vectors;
 
 	Image noteImage;

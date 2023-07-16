@@ -11,7 +11,7 @@ public class HpBarManager : MonoBehaviour
 
     double tickTime = 0.05d;
     double currentTime = 0d;
-    int maxBarLength = 400;
+    int maxBarLength = 800;
     int hp = 100;
 
     // Start is called before the first frame update
