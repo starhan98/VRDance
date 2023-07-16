@@ -14,6 +14,9 @@ public class Result : MonoBehaviour
     public RawImage result_icon;
 
     public TextMeshProUGUI[] score_texts;
+    public AudioSource SFX;
+    public AudioClip score_sound;
+    public AudioClip rank_sound;
 
     private void Start() {
 
@@ -32,11 +35,23 @@ public class Result : MonoBehaviour
     private System.Collections.IEnumerator displayScore(int[] scores, Texture rank) {
 
         float t = 0f;
-        float duration = 1f;
+        float duration = 0.7f;
 
+        
+        t = 0f;
+        while (t < 1f) {
+            t += Time.deltaTime / 1f;
+            yield return null;
+        }
+
+
+        SFX.clip = score_sound;
+        SFX.loop = true;
+        SFX.Play();
         for(int i = 0; i < 6; i++) {
             t = 0f;
             score_texts[i].enabled = true;
+            
             while (t < 1f) {
                 t += Time.deltaTime / duration;
                 score_texts[i].text = ((int)(scores[i] * t)).ToString();
@@ -49,13 +64,23 @@ public class Result : MonoBehaviour
             if (i == 5) {
                 score_texts[i].text += "%";
             }
+            t = 0f;
+            while (t < 1f) {
+                t += Time.deltaTime / 0.1f;
+                yield return null;
+            }
         }
+        SFX.Stop();
+        SFX.loop = false;
 
         t = 0f;
         while (t < 1f) {
             t += Time.deltaTime / 1.5f;
             yield return null;
         }
+        SFX.clip = rank_sound;
+
+        SFX.Play();
         result_icon.texture = rank;
         result_icon.enabled = true;
     }
