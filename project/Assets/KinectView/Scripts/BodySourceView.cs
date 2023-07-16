@@ -42,6 +42,30 @@ public class BodySourceView : MonoBehaviour
         { Kinect.JointType.SpineShoulder, Kinect.JointType.Neck },
         { Kinect.JointType.Neck, Kinect.JointType.Head },
     };
+
+    private Vector3[] jointPosData = new Vector3[16];
+    public bool isSync = false;
+
+    public Vector3[] GetPosData(Kinect.Body body)
+    {
+        jointPosData[0] = GetVector3FromJoint(body.Joints[Kinect.JointType.HandLeft]);
+        jointPosData[1] = GetVector3FromJoint(body.Joints[Kinect.JointType.ElbowLeft]);
+        jointPosData[2] = GetVector3FromJoint(body.Joints[Kinect.JointType.ShoulderLeft]);
+        jointPosData[3] = GetVector3FromJoint(body.Joints[Kinect.JointType.HandRight]);
+        jointPosData[4] = GetVector3FromJoint(body.Joints[Kinect.JointType.ElbowRight]);
+        jointPosData[5] = GetVector3FromJoint(body.Joints[Kinect.JointType.ShoulderRight]);
+        jointPosData[6] = GetVector3FromJoint(body.Joints[Kinect.JointType.FootLeft]);
+        jointPosData[7] = GetVector3FromJoint(body.Joints[Kinect.JointType.KneeLeft]);
+        jointPosData[8] = GetVector3FromJoint(body.Joints[Kinect.JointType.HipLeft]);
+        jointPosData[9] = GetVector3FromJoint(body.Joints[Kinect.JointType.FootRight]);
+        jointPosData[10] = GetVector3FromJoint(body.Joints[Kinect.JointType.KneeRight]);
+        jointPosData[11] = GetVector3FromJoint(body.Joints[Kinect.JointType.HipRight]);
+        jointPosData[12] = GetVector3FromJoint(body.Joints[Kinect.JointType.SpineBase]);
+        jointPosData[13] = GetVector3FromJoint(body.Joints[Kinect.JointType.SpineMid]);
+        jointPosData[14] = GetVector3FromJoint(body.Joints[Kinect.JointType.SpineShoulder]);
+        jointPosData[15] = GetVector3FromJoint(body.Joints[Kinect.JointType.Head]);
+        return jointPosData;
+    }
     
     void Update () 
     {
@@ -103,6 +127,10 @@ public class BodySourceView : MonoBehaviour
                 }
                 
                 RefreshBodyObject(body, _Bodies[body.TrackingId]);
+                if(isSync)
+                {
+                    GetPosData(body);
+                }
             }
         }
     }
