@@ -21,6 +21,8 @@ public class NoteManager : MonoBehaviour
     JudgeViewer judgeViewer;
     HpBarManager hpBarManager;
 
+    public GameObject bodyView;
+
     void Start()
     {
         judgeManager = GetComponent<JudgeManager>();
@@ -52,6 +54,9 @@ public class NoteManager : MonoBehaviour
         if (collision.CompareTag("note")) {
             List<Vector3> userPos = new List<Vector3>();
             // TODO: userPos 입력해주세요
+            userPos = bodyView.GetComponent<BodySourceView>().GetPosData();
+            Debug.Log(userPos[0]);
+
             int judgeResult = 0;
             // int judgeResult = judgeManager.Judge(userPos);
             Destroy(collision.gameObject);

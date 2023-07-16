@@ -43,10 +43,17 @@ public class BodySourceView : MonoBehaviour
         { Kinect.JointType.Neck, Kinect.JointType.Head },
     };
 
-    private Vector3[] jointPosData = new Vector3[16];
-    public bool isSync = false;
+    private List<Vector3> jointPosData = new List<Vector3>();
+    // public bool isSync = false;
 
-    public Vector3[] GetPosData(Kinect.Body body)
+    private void InitPosData()
+    {
+        for(int i  = 0; i < 16; i++){
+            jointPosData.Add(new Vector3(0,0,0));
+        }
+    }
+
+    public void SetPosData(Kinect.Body body)
     {
         jointPosData[0] = GetVector3FromJoint(body.Joints[Kinect.JointType.HandLeft]);
         jointPosData[1] = GetVector3FromJoint(body.Joints[Kinect.JointType.ElbowLeft]);
@@ -64,7 +71,16 @@ public class BodySourceView : MonoBehaviour
         jointPosData[13] = GetVector3FromJoint(body.Joints[Kinect.JointType.SpineMid]);
         jointPosData[14] = GetVector3FromJoint(body.Joints[Kinect.JointType.SpineShoulder]);
         jointPosData[15] = GetVector3FromJoint(body.Joints[Kinect.JointType.Head]);
+    }
+
+    public List<Vector3> GetPosData()
+    {
         return jointPosData;
+    }
+
+    void Start()
+    {
+        InitPosData();
     }
     
     void Update () 
@@ -127,10 +143,7 @@ public class BodySourceView : MonoBehaviour
                 }
                 
                 RefreshBodyObject(body, _Bodies[body.TrackingId]);
-                if(isSync)
-                {
-                    GetPosData(body);
-                }
+                SetPosData(body);
             }
         }
     }
