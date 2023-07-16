@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1715,6 +1715,9 @@ MonoBehaviour:
   SFX: {fileID: 1410348155}
   score_sound: {fileID: 8300000, guid: d4a2e3e386925ba46b36491b50cceaf1, type: 3}
   rank_sound: {fileID: 8300000, guid: 4697ec6e27a3b71439f88fc1d2442c04, type: 3}
+  selected_song: {fileID: 0}
+  song_name: {fileID: 963528938}
+  thumbnail: {fileID: 679425657}
 --- !u!1 &990864507
 GameObject:
   m_ObjectHideFlags: 0

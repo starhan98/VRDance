@@ -433,6 +433,7 @@ MonoBehaviour:
   mode: 0
   speed: 0
   stop_pos: {fileID: 2800000, guid: 93256c35a5cda4247a926149357b561c, type: 3}
+  thumbnail: {fileID: 2800000, guid: a1e6847a145eefc488200889c3055908, type: 3}
 --- !u!114 &245524264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,6 +894,7 @@ MonoBehaviour:
   mode: 0
   speed: 0
   stop_pos: {fileID: 2800000, guid: fa3ab2ac81e2da94792aa55104ddf75c, type: 3}
+  thumbnail: {fileID: 2800000, guid: af3ba92ea1d1a044496508f7dc123a63, type: 3}
 --- !u!114 &673007380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,6 +1441,7 @@ MonoBehaviour:
   mode: 0
   speed: 0
   stop_pos: {fileID: 2800000, guid: dc0d0a8d856a4cb4eb56be16d3a452fe, type: 3}
+  thumbnail: {fileID: 2800000, guid: d2f4684127df5d04bb4f34f31f97b11b, type: 3}
 --- !u!114 &774303484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2360,6 +2363,7 @@ MonoBehaviour:
   mode: 0
   speed: 0
   stop_pos: {fileID: 2800000, guid: e54d22be23013fe47b33e9d87ee95e0a, type: 3}
+  thumbnail: {fileID: 2800000, guid: 2ff08aa2332dd4d4b9c881148eba9eab, type: 3}
 --- !u!114 &1312129382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2586,7 +2590,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 50}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1472337150
 MonoBehaviour:
@@ -3022,6 +3026,7 @@ MonoBehaviour:
   mode: 0
   speed: 0
   stop_pos: {fileID: 2800000, guid: 9a582e2f5dde2d64fb80dcbbb1dd70b4, type: 3}
+  thumbnail: {fileID: 2800000, guid: 16966edf2ef3bc94784ba404976be028, type: 3}
 --- !u!114 &1820253523
 MonoBehaviour:
   m_ObjectHideFlags: 0

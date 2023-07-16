@@ -17,8 +17,15 @@ public class Result : MonoBehaviour
     public AudioSource SFX;
     public AudioClip score_sound;
     public AudioClip rank_sound;
+    public SongInfo selected_song;
+    public TextMeshProUGUI song_name;
+    public RawImage thumbnail;
 
     private void Start() {
+
+        selected_song = GameObject.Find("SelectedSong").GetComponent<SongInfo>();
+        thumbnail.texture = selected_song.thumbnail;
+        song_name.text = selected_song.name;
 
         int[] scores = new int[6] {1234, 120, 50, 40, 12, 95};
 
