@@ -30,6 +30,7 @@ public class SongList : MonoBehaviour
     private int select_mode = 0; // 0: select song, 1: select mode, 2: select speed
 
     private void Start() { 
+        panel.enabled = false;
         mv_player.loopPointReached += OnVideoClipEnd;
         mv_player.clip = songs[cur_song_index].GetComponent<SongInfo>().mv;
         mv_player.Play();
@@ -199,6 +200,7 @@ public class SongList : MonoBehaviour
 
     
     private IEnumerator FadeOut() {
+        panel.enabled = true;
 
         float t = 0f;
         float duration = 1.5f;
@@ -210,7 +212,7 @@ public class SongList : MonoBehaviour
             panel.color = new Color(0, 0, 0, t);
             yield return null;
         }
-        panel.color = new Color(0, 0, 0, 255);
+        panel.color = new Color(0, 0, 0, 1);
         SceneManager.LoadScene("GameScene");
     }
 
