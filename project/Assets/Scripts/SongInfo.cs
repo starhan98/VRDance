@@ -14,6 +14,7 @@ public class SongInfo : MonoBehaviour
     private bool on_move = false;
     public int mode; // 0: practice, 1: ranked
     public float speed; // 0.5x, 1.0x, 1.5x
+    public Texture stop_pos;
 
     public bool shiftRight() {
         if (on_move) {
