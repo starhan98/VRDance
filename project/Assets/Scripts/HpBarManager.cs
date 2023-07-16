@@ -13,6 +13,7 @@ public class HpBarManager : MonoBehaviour
     double currentTime = 0d;
     int maxBarLength = 800;
     int hp = 100;
+    bool started = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +21,15 @@ public class HpBarManager : MonoBehaviour
         ChangeHp(0);
     }
 
+    public void StartGame() {
+        started = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (!started) return;
+        
         currentTime += Time.deltaTime;
 
         while (currentTime >= tickTime) {

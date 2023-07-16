@@ -13,8 +13,12 @@ public class GameManager : MonoBehaviour
     public Texture[] numbers;
     public RawImage countdown;
     public RawImage stop_pos;
+    public HpBarManager hpBarManager;
+
     void Start() {
         selected_song = GameObject.Find("SelectedSong").GetComponent<SongInfo>();
+        hpBarManager = GameObject.Find("HpBar").GetComponent<HpBarManager>();
+
         stop_pos.texture = selected_song.stop_pos;
         mv_player.clip = selected_song.shorts;
         song_speed = selected_song.speed;
@@ -50,6 +54,7 @@ public class GameManager : MonoBehaviour
         }
         countdown.enabled = false;
         mv_player.Play();
+        hpBarManager.StartGame();
     }
 
 }
