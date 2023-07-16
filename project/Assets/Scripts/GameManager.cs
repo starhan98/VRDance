@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public RawImage countdown;
     public RawImage stop_pos;
     public HpBarManager hpBarManager;
+    public Image panel;
 
     void Start() {
         selected_song = GameObject.Find("SelectedSong").GetComponent<SongInfo>();
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
         mv_player.Prepare();
 
         countdown.texture = numbers[0];
-        StartCoroutine(Countdown());
+        StartCoroutine(FadeIn());
 
 
     }
@@ -55,6 +56,22 @@ public class GameManager : MonoBehaviour
         countdown.enabled = false;
         mv_player.Play();
         hpBarManager.StartGame();
+    }
+
+    private IEnumerator FadeIn() {
+
+        float t = 0f;
+        float duration = 1.5f;
+
+        while (t < 1f) {
+            t += Time.deltaTime / duration;
+            panel.color = new Color(0, 0, 0, 1 - t);
+            yield return null;
+        }
+        panel.color = new Color(0, 0, 0, 0);
+        panel.enabled = false;
+
+        StartCoroutine(Countdown());
     }
 
 }
