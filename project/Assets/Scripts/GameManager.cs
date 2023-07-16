@@ -86,15 +86,13 @@ public class GameManager : MonoBehaviour
     private IEnumerator FadeOut(double video_len) {
         float t = 0f;
         float duration = 1.5f;
-        Debug.Log(Time.deltaTime / ((float)video_len - 1));
         while (t < 1f) {
             t += Time.deltaTime / ((float)video_len - 1);
             yield return null;
         }
 
-        Debug.Log(Time.deltaTime / ((float)video_len - 1));
         panel.enabled = true;
-        t = 0f;
+        t = 0;
 
         while (t < 1f) {
             t += Time.deltaTime / duration;
