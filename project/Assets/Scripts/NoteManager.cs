@@ -11,7 +11,6 @@ public class NoteManager : MonoBehaviour
 
 	[SerializeField] Transform NoteAppearLocation;
 	[SerializeField] GameObject NotePrefab;
-    [SerializeField] GameObject HpBar;
 
 	int bpm = 120;
 	double currentTime = 0d;
@@ -26,7 +25,7 @@ public class NoteManager : MonoBehaviour
     {
         judgeManager = GetComponent<JudgeManager>();
         judgeViewer = GetComponent<JudgeViewer>();
-        hpBarManager = HpBar.GetComponent<HpBarManager>();
+        hpBarManager = GameObject.Find("HpBar").GetComponent<HpBarManager>();
     }
 
     void Update()
