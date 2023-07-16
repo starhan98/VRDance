@@ -52,7 +52,8 @@ public class NoteManager : MonoBehaviour
         if (collision.CompareTag("note")) {
             List<Vector3> userPos = new List<Vector3>();
             // TODO: userPos 입력해주세요
-            int judgeResult = judgeManager.Judge(userPos);
+            int judgeResult = 0;
+            // int judgeResult = judgeManager.Judge(userPos);
             Destroy(collision.gameObject);
             judgeViewer.DisplayImage(judgeResult);
             hpBarManager.ChangeHp(10);
