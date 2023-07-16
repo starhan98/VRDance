@@ -49,10 +49,15 @@ public class SongList : MonoBehaviour
     }
 
 
+    bool move_delay = false;
     private void Update() {
         bool shifting = true;
+        if(move_delay) {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Return)) {
             Select();
+            move_delay = true;
         } else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
             if (select_mode == 0) {    
                 if (cur_song_index > 0) {
@@ -74,6 +79,7 @@ public class SongList : MonoBehaviour
                     song_mode.text = "<color=green>Practice</color>    |    Ranked";
                     mode = 0;
                 }
+                move_delay = true;
             } else if (select_mode == 2) {
                 if (song_speed.text == "0.5x    |    <color=yellow>1.0x</color>    |    1.5x") {
                     song_speed.text = "<color=green>0.5x</color>    |    1.0x    |    1.5x";
@@ -85,6 +91,7 @@ public class SongList : MonoBehaviour
                     song_speed.text = "0.5x    |    <color=yellow>1.0x</color>    |    1.5x";
                     speed = 1.0f;
                 }
+                move_delay = true;
             } 
         } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
             if (select_mode == 0) {
@@ -107,6 +114,7 @@ public class SongList : MonoBehaviour
                     song_mode.text = "<color=green>Practice</color>    |    Ranked";
                     mode = 0;
                 }
+                move_delay = true;
             } else if (select_mode == 2) {
                 if (song_speed.text == "0.5x    |    <color=yellow>1.0x</color>    |    1.5x") {
                     song_speed.text = "0.5x    |    1.0x    |    <color=red>1.5x</color>";
@@ -118,9 +126,14 @@ public class SongList : MonoBehaviour
                     song_speed.text = "<color=green>0.5x</color>    |    1.0x    |    1.5x";
                     speed = 0.5f;
                 }
+                move_delay = true;
             } 
         } else if (Input.GetKeyDown(KeyCode.Escape)) {
             Escape();
+            move_delay = true;
+        }
+        if (move_delay) {
+            StartCoroutine(delayKey(0.5f));
         }
     }
 
@@ -156,6 +169,11 @@ public class SongList : MonoBehaviour
         mv_player.SetDirectAudioVolume(0, 1.0f);
     }
 
+    private IEnumerator delayKey(float t) {
+        yield return new WaitForSeconds(t);
+        move_delay = false;
+    }
+
     private void OnVideoClipEnd(VideoPlayer vp) {
         vp.Stop();
         vp.Play();
@@ -174,8 +192,9 @@ public class SongList : MonoBehaviour
             select_mode++;
             song_speed.text = "0.5x    |    <color=yellow>1.0x</color>    |    1.5x";
         } 
-        else {
+        else if (select_mode == 2) {
             // goto next scene;
+            select_mode++;
             mv_player.Stop();
             StartCoroutine(FadeOut());
             GameObject SelectedSong = Instantiate(songs[cur_song_index]);
