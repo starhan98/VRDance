@@ -50,9 +50,12 @@ public class NoteManager : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D collision) {
         if (collision.CompareTag("note")) {
-            judgeManager.boxNoteList.Remove(collision.gameObject);
+            List<Vector3> userPos = new List<Vector3>();
+            // TODO: userPos 입력해주세요
+            int judgeResult = 0;
+            // int judgeResult = judgeManager.Judge(userPos);
             Destroy(collision.gameObject);
-            judgeViewer.DisplayImage();
+            judgeViewer.DisplayImage(judgeResult);
             hpBarManager.ChangeHp(10);
         }
     }

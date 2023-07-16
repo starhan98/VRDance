@@ -427,7 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: "Teddy Bear        STACY(\uC2A4\uD14C\uC774\uC528)"
   difficulty: HARD
-  feature: Intense Movement
+  feature: "\uD314 \uC6C0\uC9C1\uC784, \uB2E4\uB9AC \uC6C0\uC9C1\uC784 \uB9CE\uC74C"
   mv: {fileID: 32900000, guid: 7553253f311767944b792d41d1d94a98, type: 3}
   shorts: {fileID: 32900000, guid: 017fb285f0fdc204f967688f96a58045, type: 3}
   mode: 0
@@ -526,7 +526,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 798342e276437ab43be7c3dfdd23ef0e, type: 3}
+  m_Texture: {fileID: 2800000, guid: 26811edfd3b0e6b4a948d54a72137c22, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 878ce89c0e9446348b1282b7587de406, type: 3}
+  m_Texture: {fileID: 2800000, guid: ad654606f2f595a4b88437092c2bd8d9, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -746,7 +746,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 798342e276437ab43be7c3dfdd23ef0e, type: 3}
+  m_Texture: {fileID: 2800000, guid: 26811edfd3b0e6b4a948d54a72137c22, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -886,8 +886,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: NIGHT DANCER        imase
-  difficulty: HARD
-  feature: Intense Movement
+  difficulty: NORMAL
+  feature: "\uB2E4\uB9AC \uC6C0\uC9C1\uC784 \uB9CE\uC74C"
   mv: {fileID: 32900000, guid: cd47b1dfa28730f4c8585de1e9c9367c, type: 3}
   shorts: {fileID: 32900000, guid: 43267e40966780149a6a5e770513d837, type: 3}
   mode: 0
@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 878ce89c0e9446348b1282b7587de406, type: 3}
+  m_Texture: {fileID: 2800000, guid: ad654606f2f595a4b88437092c2bd8d9, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1290,7 +1290,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 878ce89c0e9446348b1282b7587de406, type: 3}
+  m_Texture: {fileID: 2800000, guid: ad654606f2f595a4b88437092c2bd8d9, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1363,7 +1363,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 798342e276437ab43be7c3dfdd23ef0e, type: 3}
+  m_Texture: {fileID: 2800000, guid: 26811edfd3b0e6b4a948d54a72137c22, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1433,7 +1433,7 @@ MonoBehaviour:
   name: "\uC774\uBE0C, \uD504\uC2DC\uCF00 \uADF8\uB9AC\uACE0 \uD478\uB978 \uC218\uC5FC\uC758
     \uC544\uB0B4        LE SSERAFIM (\uB974\uC138\uB77C\uD54C)"
   difficulty: NORMAL
-  feature: Intense Movement
+  feature: "\uD314 \uC6C0\uC9C1\uC784, \uC810\uD504 \uB9CE\uC74C"
   mv: {fileID: 32900000, guid: a090c4ee4dec85040affd613192d2e18, type: 3}
   shorts: {fileID: 32900000, guid: daddf5f5b01b2ee4abd7f684f964c441, type: 3}
   mode: 0
@@ -1533,7 +1533,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 878ce89c0e9446348b1282b7587de406, type: 3}
+  m_Texture: {fileID: 2800000, guid: ad654606f2f595a4b88437092c2bd8d9, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1606,7 +1606,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 798342e276437ab43be7c3dfdd23ef0e, type: 3}
+  m_Texture: {fileID: 2800000, guid: 26811edfd3b0e6b4a948d54a72137c22, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2076,7 +2076,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 798342e276437ab43be7c3dfdd23ef0e, type: 3}
+  m_Texture: {fileID: 2800000, guid: 26811edfd3b0e6b4a948d54a72137c22, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2284,7 +2284,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: e7f05aa1e04dd1d4d9b5316dd09686e0, type: 3}
+  m_Texture: {fileID: 2800000, guid: e418a6c949629c643aa61411021fb17c, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2352,8 +2352,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: IDOL        YOASOBI
-  difficulty: NORMAL
-  feature: Intense Movement
+  difficulty: HARD
+  feature: "\uD314 \uC6C0\uC9C1\uC784, \uB2E4\uB9AC \uC6C0\uC9C1\uC784, \uC810\uD504
+    \uB9CE\uC74C"
   mv: {fileID: 32900000, guid: 1724dafa615848d4ba35e3c9950e6868, type: 3}
   shorts: {fileID: 32900000, guid: 9934d6d38b249bb4d97866fe161d6d1a, type: 3}
   mode: 0
@@ -3015,7 +3016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: "\uD038\uCE74(Queencard)        (\uC5EC\uC790)\uC544\uC774\uB4E4"
   difficulty: EASY
-  feature: Intense Movement
+  feature: "\uD314 \uC6C0\uC9C1\uC784 \uB9CE\uC74C"
   mv: {fileID: 32900000, guid: d602216d73eeadb4b91ccf9a7b21424b, type: 3}
   shorts: {fileID: 32900000, guid: 01419830f93cc804889644d6ad2c7373, type: 3}
   mode: 0
@@ -3115,7 +3116,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 878ce89c0e9446348b1282b7587de406, type: 3}
+  m_Texture: {fileID: 2800000, guid: ad654606f2f595a4b88437092c2bd8d9, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
