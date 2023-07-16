@@ -13,11 +13,11 @@ public class JudgeManager : MonoBehaviour
 
 	// 0: Perfect 1: Great 2: good 3: Bad 4: Miss
 	public int Judge(List<Vector3> userPos) {
-		List<Vector3> answerBones = CalcBones(boxNoteList[0].GetComponent<NoteInfo>().GetJoints());
+		List<Vector3> answerBones = CalcBones(boxNoteList[0].GetComponent<NoteObjectProp>().joints);
 		List<Vector3> userBones = CalcBones(userPos);
 
 		int result = CalcJudge(answerBones, userBones,
-			boxNoteList[0].GetComponent<NoteInfo>().GetCheckBones());
+			boxNoteList[0].GetComponent<NoteObjectProp>().answerBones);
 
 		boxNoteList.RemoveAt(0);
 		return result;
