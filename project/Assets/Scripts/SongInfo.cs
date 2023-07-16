@@ -7,7 +7,7 @@ using UnityEngine.Video;
 public class SongInfo : MonoBehaviour
 {
     public string name;
-    public int difficulty;
+    public string difficulty;
     public string feature;
     public VideoClip mv;
     public bool on_move = false;
@@ -17,9 +17,6 @@ public class SongInfo : MonoBehaviour
             return false;;
         }
         Vector3 direction = new Vector3(-200, 0, 0);
-        if (this.gameObject.transform.localPosition.x == -600) {
-            this.gameObject.transform.localPosition = new Vector3(800, 0, 0);
-        }
         StartCoroutine(moveToPosition(direction));
         return true;
     }
@@ -29,9 +26,6 @@ public class SongInfo : MonoBehaviour
             return false;
         }
         Vector3 direction = new Vector3(200, 0, 0);
-        if (this.gameObject.transform.localPosition.x == 600) {
-            this.gameObject.transform.localPosition = new Vector3(-800, 0, 0);
-        }
         StartCoroutine(moveToPosition(direction));
         return true;
     }
