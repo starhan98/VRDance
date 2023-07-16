@@ -10,7 +10,8 @@ public class SongInfo : MonoBehaviour
     public string difficulty;
     public string feature;
     public VideoClip mv;
-    public bool on_move = false;
+    public VideoClip shorts;
+    private bool on_move = false;
 
     public bool shiftRight() {
         if (on_move) {

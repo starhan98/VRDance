@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SongList : MonoBehaviour
 {
@@ -99,6 +100,8 @@ public class SongList : MonoBehaviour
                     song_speed.text = "<color=green>0.5x</color>    |    1.0x    |    1.5x";
                 }
             } 
+        } else if (Input.GetKeyDown(KeyCode.Escape)) {
+            Escape();
         }
     }
 
@@ -141,20 +144,35 @@ public class SongList : MonoBehaviour
 
     void Select() {
 
-            sfx_player.clip = select_sound;
-            mv_player.SetDirectAudioVolume(0, 0.2f);
-            sfx_player.Play();
-            StartCoroutine(delayMVSound(0.5f));
-            if (select_mode == 0) {
-                select_mode++;
-                song_mode.text = "<color=green>Practice</color>    |    Ranked";
-            } else if (select_mode == 1) {
-                select_mode++;
-                song_speed.text = "0.5x    |    <color=yellow>1.0x</color>    |    1.5x";
-            } 
-            else {
-                // goto next scene;
-            }
+        sfx_player.clip = select_sound;
+        mv_player.SetDirectAudioVolume(0, 0.2f);
+        sfx_player.Play();
+        StartCoroutine(delayMVSound(0.5f));
+        if (select_mode == 0) {
+            select_mode++;
+            song_mode.text = "<color=green>Practice</color>    |    Ranked";
+        } else if (select_mode == 1) {
+            select_mode++;
+            song_speed.text = "0.5x    |    <color=yellow>1.0x</color>    |    1.5x";
+        } 
+        else {
+            // goto next scene;
+            SongInfo SelectedSong = Instantiate(songs[cur_song_index].GetComponent<SongInfo>());
+            SceneManager.LoadScene("GameScene");
+            DontDestroyOnLoad(SelectedSong);
+        }
+    }
+
+    void Escape() {
+        if (select_mode == 1) {
+            select_mode--;
+            song_mode.text = "Practice    |    Ranked";
+        } else if (select_mode == 2) {
+            select_mode--;
+            song_speed.text = "0.5x    |    1.0x    |    1.5x";
+        } else {
+            return;
+        }
     }
 
 }
