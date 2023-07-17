@@ -71,11 +71,11 @@ public class SongList : MonoBehaviour
         List<Vector3> userPos = GetUserPos();
         List<Vector3> userBones = judgeManager.CalcBones(userPos);
 
-        if ((IsCapturing() && judgeManager.CalcJudge(okMotion, userBones, bones))
+        if ((IsCapturing() && judgeManager.CalcJudge(okMotion, userBones, bones) == 0)
             || Input.GetKeyDown(KeyCode.Return)) {
             Select();
             move_delay = true;
-        } else if ((IsCapturing() && judgeManager.CalcJudge(leftMotion, userBones, bones))
+        } else if ((IsCapturing() && judgeManager.CalcJudge(leftMotion, userBones, bones) == 0)
             || Input.GetKeyDown(KeyCode.LeftArrow)) {
             if (select_mode == 0) {    
                 if (cur_song_index > 0) {
@@ -111,7 +111,7 @@ public class SongList : MonoBehaviour
                 }
                 move_delay = true;
             } 
-        } else if ((IsCapturing() && judgeManager.CalcJudge(rightMotion, userBones, bones))
+        } else if ((IsCapturing() && judgeManager.CalcJudge(rightMotion, userBones, bones) == 0)
             || Input.GetKeyDown(KeyCode.RightArrow)) {
             if (select_mode == 0) {
                 if (cur_song_index < 4) {
@@ -147,7 +147,7 @@ public class SongList : MonoBehaviour
                 }
                 move_delay = true;
             } 
-        } else if ((IsCapturing() && judgeManager.CalcJudge(noMotion, userBones, bones))
+        } else if ((IsCapturing() && judgeManager.CalcJudge(noMotion, userBones, bones) == 0)
             || Input.GetKeyDown(KeyCode.Escape)) {
             Escape();
             move_delay = true;
