@@ -9,6 +9,8 @@ public class MapMaker : MonoBehaviour
 	NoteInfos result;
 	string fileName;
 
+    public GameObject bodyView;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,9 +48,11 @@ public class MapMaker : MonoBehaviour
 
     List<Vector3> GetUserPos() {
     	List<Vector3> res = new List<Vector3>();
-    	for (int i = 0; i < 16; i++) {
-    		res.Add(new Vector3(i, i+1, i+2));
-    	}
+        //for (int i = 0; i < 16; i++) {
+        //TODO
+        //	res.Add(new Vector3(i, i+1, i+2));
+        //}
+        res = bodyView.GetComponent<BodySourceView>().GetPosData();
     	return res;
     }
 

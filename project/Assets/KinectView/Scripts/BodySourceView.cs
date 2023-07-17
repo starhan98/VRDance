@@ -62,7 +62,7 @@ public class BodySourceView : MonoBehaviour
             jointDataString += i.ToString() + " : " + jointPosData[i].ToString() + "\n";
             
         }
-        Debug.Log(jointDataString);
+        //Debug.Log(jointDataString);
     }
 
     public void SetPosData(Kinect.Body body)
