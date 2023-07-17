@@ -23,7 +23,7 @@ public class JudgeManager : MonoBehaviour
 		return result;
 	}
 
-	List<Vector3> CalcBones(List<Vector3> joints) {
+	public List<Vector3> CalcBones(List<Vector3> joints) {
 		List<Vector3> bones = new List<Vector3>();
 		// SP
 		bones.Add(joints[12] - joints[14]);
@@ -87,7 +87,7 @@ public class JudgeManager : MonoBehaviour
 		return leastScore;
 	}
 
-	int checkDifference(Vector3 v1, Vector3 v2) {
+	public int checkDifference(Vector3 v1, Vector3 v2) {
 		if (Vector3.Angle(v1, v2) < perfectAngle) return 0;
 		if (Vector3.Angle(v1, v2) < greatAngle) return 1;
 		if (Vector3.Angle(v1, v2) < goodAngle) return 2;
