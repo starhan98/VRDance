@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -427,6 +427,7 @@ MonoBehaviour:
   MainBar: {fileID: 1134604102}
   EndTip: {fileID: 894738406}
   tickTime: 0.05
+  is_gameover: 0
 --- !u!1 &263337809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,6 +1536,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: d6a0cfa4f8300a241b1c66e0db10e674, type: 3}
   countdown: {fileID: 95225419}
   stop_pos: {fileID: 1075952571}
+  gameover_icon: {fileID: 2132244610}
   panel: {fileID: 1798195376}
   hpBarManager: {fileID: 0}
   noteManager: {fileID: 0}

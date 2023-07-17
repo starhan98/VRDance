@@ -19,6 +19,7 @@ public class SongInfo : MonoBehaviour
     public int bpm;
     public string jsonfile_name;
     public double start_offset;
+    public bool is_gameover = false;
 
     public int[] score_cnt = new int[5] {0, 0, 0, 0, 0};
 

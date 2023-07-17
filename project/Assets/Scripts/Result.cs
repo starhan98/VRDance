@@ -91,7 +91,10 @@ public class Result : MonoBehaviour
 
         SFX.Play();
         int acc = scores[6];
-        if (acc > 90) {
+        if (selected_song.is_gameover) {
+            result_icon.texture = F_icon;
+        }
+        else if (acc > 90) {
             result_icon.texture = S_icon;
         }
         else if (acc > 75) {
