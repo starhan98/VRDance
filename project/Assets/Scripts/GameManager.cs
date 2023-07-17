@@ -17,12 +17,14 @@ public class GameManager : MonoBehaviour
     public Image panel;
 
     public HpBarManager hpBarManager;
+    public NoteManager noteManager;
 
 
     void Start() {
 
         selected_song = GameObject.Find("SelectedSong").GetComponent<SongInfo>();
         hpBarManager = GameObject.Find("HpBar").GetComponent<HpBarManager>();
+        noteManager = GameObject.Find("Game").GetComponent<NoteManager>();
 
         stop_pos.texture = selected_song.stop_pos;
         mv_player.clip = selected_song.shorts;
@@ -61,10 +63,8 @@ public class GameManager : MonoBehaviour
         countdown.enabled = false;
         
         mv_player.Play();
-        StartCoroutine(FadeOut(mv_player.length));
+        StartCoroutine(FadeOut(mv_player.length / noteManager.speed));
         hpBarManager.StartGame();
-
-
     }
 
 

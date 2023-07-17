@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using UnityEngine.Video;
 
 public class NoteManager : MonoBehaviour
 {
@@ -11,13 +12,16 @@ public class NoteManager : MonoBehaviour
 
 	[SerializeField] Transform NoteAppearLocation;
 	[SerializeField] GameObject NotePrefab;
+    [SerializeField] GameObject MVPlayer;
 
-	int bpm = 120;
+	int bpm;
+    string jsonFile;
+    double startOffset;
+    public float speed;
+    
 	double currentTime = 0d;
-	double startOffset = 3d;
-    bool ended = false;
     bool started = false;
-    string jsonFile = "idol";
+    bool ended = false;
     
     JudgeManager judgeManager;
     JudgeViewer judgeViewer;
@@ -33,7 +37,11 @@ public class NoteManager : MonoBehaviour
         SongInfo selected_song = GameObject.Find("SelectedSong").GetComponent<SongInfo>();
         jsonFile = selected_song.jsonfile_name;
         bpm = selected_song.bpm;
-        startOffset = selected_song.start_offset;
+        speed = selected_song.speed;
+        startOffset = selected_song.start_offset / speed + 3.8;
+        MVPlayer.GetComponent<VideoPlayer>().playbackSpeed = speed;
+
+        hpBarManager.tickTime = 0.05d / speed;
 
         ReadJson();
     }
@@ -41,6 +49,7 @@ public class NoteManager : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
+
         if (!started) {
             if (currentTime >= startOffset) {
                 started = true;
@@ -49,7 +58,7 @@ public class NoteManager : MonoBehaviour
             return;
         }
 
-        if (!ended && currentTime >= 60d / bpm * noteInfos.notes[0].time) {
+        if (!ended && currentTime >= 60d / bpm * noteInfos.notes[0].time / speed) {
         	GameObject t_note = Instantiate(NotePrefab, NoteAppearLocation.position, Quaternion.identity);
             t_note.GetComponent<NoteObjectProp>().Initiate(noteInfos.notes[0]);
             Sprite sprite = Resources.Load<Sprite>("Notes/" + jsonFile + "/" + noteInfos.notes[0].image);
@@ -64,7 +73,7 @@ public class NoteManager : MonoBehaviour
             }
         }
     }
-    
+
     private void OnTriggerExit2D(Collider2D collision) {
         if (collision.CompareTag("note")) {
             List<Vector3> userPos = new List<Vector3>();
@@ -72,11 +81,15 @@ public class NoteManager : MonoBehaviour
             userPos = bodyView.GetComponent<BodySourceView>().GetPosData();
             Debug.Log(userPos[0]);
 
-            int judgeResult = 0;
-            // int judgeResult = judgeManager.Judge(userPos);
+            // int judgeResult = 0;
+            int judgeResult = judgeManager.Judge(userPos);
             Destroy(collision.gameObject);
             judgeViewer.DisplayImage(judgeResult);
-            hpBarManager.ChangeHp(10);
+            if (judgeResult == 0) hpBarManager.ChangeHp(15);
+            else if (judgeResult == 1) hpBarManager.ChangeHp(10);
+            else if (judgeResult == 2) hpBarManager.ChangeHp(15);
+            else if (judgeResult == 3) hpBarManager.ChangeHp(0);
+            else hpBarManager.ChangeHp(-5);
         }
     }
 

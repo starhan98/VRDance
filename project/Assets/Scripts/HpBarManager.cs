@@ -9,7 +9,7 @@ public class HpBarManager : MonoBehaviour
     [SerializeField] Image MainBar;
     [SerializeField] Image EndTip;
 
-    double tickTime = 0.05d;
+    public double tickTime = 0.05d;
     double currentTime = 0d;
     int maxBarLength = 800;
     int hp = 100;
