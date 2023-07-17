@@ -51,21 +51,21 @@ public class JudgeManager : MonoBehaviour
 		if (checkBones.Contains("SP"))
 			totalMiss += MissScore(checkDifference(answer[0], user[0]));
 		if (checkBones.Contains("LUA"))
-			totalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[1], user[1]));
 		if (checkBones.Contains("LLA"))
-			totalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[2], user[2]));
 		if (checkBones.Contains("RUA"))
-			totalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[3], user[3]));
 		if (checkBones.Contains("RLA"))
-			totalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[3], user[3]));
 		if (checkBones.Contains("LUL"))
-			totalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[4], user[4]));
 		if (checkBones.Contains("LLL"))
-			totalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[5], user[5]));
 		if (checkBones.Contains("RUL"))
-			totalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[6], user[6]));
 		if (checkBones.Contains("RLL")) {
-			totalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[7], user[7]));
 		}
 
 		if (totalMiss <= 4) return 0;
