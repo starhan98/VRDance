@@ -9,7 +9,7 @@ public class JudgeManager : MonoBehaviour
 	int perfectAngle = 10;
 	int greatAngle = 15;
 	int goodAngle = 20;
-	int badAngle = 40;
+	int badAngle = 30;
 
 	// 0: Perfect 1: Great 2: good 3: Bad 4: Miss
 	public int Judge(List<Vector3> userPos) {
@@ -47,44 +47,33 @@ public class JudgeManager : MonoBehaviour
 	}
 
 	int CalcJudge(List<Vector3> answer, List<Vector3> user, List<string> checkBones) {
-		int leastScore = 0, tempScore = 0;
-		if (checkBones.Contains("SP")) {
-			tempScore = checkDifference(answer[0], user[0]);
-			leastScore = leastScore > tempScore ? leastScore : tempScore;
-		}
-		if (checkBones.Contains("LUA")) {
-			tempScore = checkDifference(answer[1], user[1]);
-			leastScore = leastScore > tempScore ? leastScore : tempScore;
-		}
-		if (checkBones.Contains("LLA")) {
-			tempScore = checkDifference(answer[2], user[2]);
-			leastScore = leastScore > tempScore ? leastScore : tempScore;
-		}
-		if (checkBones.Contains("RUA")) {
-			tempScore = checkDifference(answer[3], user[3]);
-			leastScore = leastScore > tempScore ? leastScore : tempScore;
-		}
-		if (checkBones.Contains("RLA")) {
-			tempScore = checkDifference(answer[4], user[4]);
-			leastScore = leastScore > tempScore ? leastScore : tempScore;
-		}
-		if (checkBones.Contains("LUL")) {
-			tempScore = checkDifference(answer[5], user[5]);
-			leastScore = leastScore > tempScore ? leastScore : tempScore;
-		}
-		if (checkBones.Contains("LLL")) {
-			tempScore = checkDifference(answer[6], user[6]);
-			leastScore = leastScore > tempScore ? leastScore : tempScore;
-		}
-		if (checkBones.Contains("RUL")) {
-			tempScore = checkDifference(answer[7], user[7]);
-			leastScore = leastScore > tempScore ? leastScore : tempScore;
-		}
+		int totalMiss = 0;
+		if (checkBones.Contains("SP"))
+			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+		if (checkBones.Contains("LUA"))
+			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+		if (checkBones.Contains("LLA"))
+			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+		if (checkBones.Contains("RUA"))
+			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+		if (checkBones.Contains("RLA"))
+			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+		if (checkBones.Contains("LUL"))
+			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+		if (checkBones.Contains("LLL"))
+			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+		if (checkBones.Contains("RUL"))
+			titalMiss += MissScore(checkDifference(answer[0], user[0]));
 		if (checkBones.Contains("RLL")) {
-			tempScore = checkDifference(answer[8], user[8]);
-			leastScore = leastScore > tempScore ? leastScore : tempScore;
+			titalMiss += MissScore(checkDifference(answer[0], user[0]));
 		}
 		return leastScore;
+
+		if (totalMiss <= 4) return 0;
+		if (totalMiss <= 8) return 1;
+		if (totalMiss <= 12) return 2;
+		if (totalMiss <= 17) return 3;
+		return 4;
 	}
 
 	public int checkDifference(Vector3 v1, Vector3 v2) {
@@ -93,5 +82,22 @@ public class JudgeManager : MonoBehaviour
 		if (Vector3.Angle(v1, v2) < goodAngle) return 2;
 		if (Vector3.Angle(v1, v2) < badAngle) return 3;
 		return 4;
+	}
+
+	// perfect: 0, great: 1, good: 2, bad: 5, miss: 15
+	int MissScore(int judgement) {
+		int result = 0;
+		switch (judgement) {
+			case 0:
+				return 0;
+			case 1:
+				return 1;
+			case 2:
+				return 2;
+			case 3:
+				return 5;
+			case 4:
+				return 15;
+		}
 	}
 }
