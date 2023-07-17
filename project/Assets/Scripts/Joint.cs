@@ -8,6 +8,6 @@ public class Joint
     public int z;
 
     public Vector3 GetVector() {
-    	return new Vector3(x, y, z);
+    	return new Vector3(x, -y, -z);
     }
 }
