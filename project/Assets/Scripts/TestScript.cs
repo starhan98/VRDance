@@ -52,7 +52,7 @@ public class TestScript : MonoBehaviour
         List<Vector3> userBones = judgeManager.CalcBones(userPos);
 
         for (int i = 0; i < answerBones.Count; i++) {
-        	result += judgeManager.checkDifference(answerBones[i], userBones[i]);
+        	result += judgeResults[judgeManager.checkDifference(answerBones[i], userBones[i])];
         	if (i < answerBones.Count - 1)
         		result += "\n";
         }
