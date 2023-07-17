@@ -39,6 +39,12 @@ public class TestScript : MonoBehaviour
         answer.Add(new Vector3(0,0,0));
         answer.Add(new Vector3(0,0,0));
         answer.Add(new Vector3(0,0,0));
+
+        // 좌표변환부분 무시하셈
+        for (int i = 0; i < answer.Count; i++) {
+            Vector3 originalVector = answer[i];
+            answer[i] = new Vector3(originalVector.x, -originalVector.y, -originalVector.z);
+        }
     }
 
     void Update()
