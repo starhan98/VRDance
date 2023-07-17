@@ -2421,6 +2421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333993925}
   - component: {fileID: 1333993926}
+  - component: {fileID: 1333993927}
   m_Layer: 5
   m_Name: SongList
   m_TagString: Untagged
@@ -2485,6 +2486,19 @@ MonoBehaviour:
   speed: 1
   mode: 0
   panel: {fileID: 54566579}
+--- !u!114 &1333993927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333993924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e6a63ad84c34eeba7e916da7cff853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxNoteList: []
 --- !u!1 &1426977384
 GameObject:
   m_ObjectHideFlags: 0
