@@ -9,11 +9,12 @@ public class HpBarManager : MonoBehaviour
     [SerializeField] Image MainBar;
     [SerializeField] Image EndTip;
 
-    public double tickTime = 0.05d;
+    public double tickTime = 0.1d;
     double currentTime = 0d;
     int maxBarLength = 800;
     int hp = 100;
     bool started = false;
+    public bool is_gameover = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +39,8 @@ public class HpBarManager : MonoBehaviour
         }
     }
 
-    public int ChangeHp(int offset) {
+    public void ChangeHp(int offset) {
+        
         hp += offset;
 
         if (hp > 100) hp = 100;
@@ -57,6 +59,10 @@ public class HpBarManager : MonoBehaviour
         EndTip.rectTransform.anchoredPosition
             = new Vector2(StartTip.rectTransform.anchoredPosition.x + pixelOffset,
                 StartTip.rectTransform.anchoredPosition.y);
-        return hp;   
+        if (hp <= 0) {
+            is_gameover = true;
+        }
     }
+
+
 }

@@ -42,7 +42,7 @@ public class NoteManager : MonoBehaviour
         startOffset = selected_song.start_offset / speed + 3.8;
         MVPlayer.GetComponent<VideoPlayer>().playbackSpeed = speed;
 
-        hpBarManager.tickTime = 0.05d / speed;
+        hpBarManager.tickTime = 0.1d / speed;
         
         ReadJson();
 
@@ -83,7 +83,7 @@ public class NoteManager : MonoBehaviour
             userPos = bodyView.GetComponent<BodySourceView>().GetPosData();
             Debug.Log(userPos[0]);
 
-            // int judgeResult = 0;
+            // int judgeResult = 2;
             int judgeResult = judgeManager.Judge(userPos);
             Destroy(collision.gameObject);
             judgeViewer.DisplayImage(judgeResult);
@@ -96,7 +96,7 @@ public class NoteManager : MonoBehaviour
                 selected_song.score_cnt[1]++;
             }
             else if (judgeResult == 2) {
-                hpBarManager.ChangeHp(15);
+                hpBarManager.ChangeHp(5);
                 selected_song.score_cnt[2]++;
                 }
             else if (judgeResult == 3) {
@@ -107,7 +107,6 @@ public class NoteManager : MonoBehaviour
                 hpBarManager.ChangeHp(-5);
                 selected_song.score_cnt[4]++;
             }
-            selected_song.score_cnt = new int[5] {9, 8, 7, 6, 5};
         }
     }
 

@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public Texture[] numbers;
     public RawImage countdown;
     public RawImage stop_pos;
+    public Image gameover_icon;
     public Image panel;
 
     public HpBarManager hpBarManager;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
         selected_song = GameObject.Find("SelectedSong").GetComponent<SongInfo>();
         hpBarManager = GameObject.Find("HpBar").GetComponent<HpBarManager>();
         noteManager = GameObject.Find("Game").GetComponent<NoteManager>();
+        gameover_icon.enabled = false;
 
         stop_pos.texture = selected_song.stop_pos;
         mv_player.clip = selected_song.shorts;
@@ -37,6 +39,14 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(FadeIn());
 
+    }
+
+    private void Update() {
+        if (hpBarManager.is_gameover && selected_song.mode == 1) {
+            gameover_icon.enabled = true;
+            selected_song.is_gameover = true;
+            StartCoroutine(FadeOut(1));
+        }
     }
 
     private IEnumerator Countdown() {
@@ -103,5 +113,7 @@ public class GameManager : MonoBehaviour
         panel.color = new Color(0, 0, 0, 1);
         SceneManager.LoadScene("ResultScene");
     }
+
+    
 
 }
