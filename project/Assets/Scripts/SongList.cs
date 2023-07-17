@@ -31,6 +31,7 @@ public class SongList : MonoBehaviour
     List<string> bones;
     JudgeManager judgeManager;
 
+    public GameObject bodyObject;
     BodySourceView bodyView;
 
     private int select_mode = 0; // 0: select song, 1: select mode, 2: select speed
@@ -42,6 +43,8 @@ public class SongList : MonoBehaviour
         mv_player.Play();
 
         SongInfo cur_song = songs[cur_song_index].GetComponent<SongInfo>();
+        bodyView = bodyObject.GetComponent<BodySourceView>();
+        judgeManager = GetComponent<JudgeManager>();
         song_name.text = cur_song.name;
         song_difficulty.text = cur_song.difficulty;
         if (song_difficulty.text == "HARD") {
@@ -59,9 +62,6 @@ public class SongList : MonoBehaviour
         okMotion = ReadMotion("SelectMotion/ok");
         noMotion = ReadMotion("SelectMotion/no");
         bones = GetAllBones();
-        judgeManager = GetComponent<JudgeManager>();
-
-        bodyView = GameObject.Find("BodyView").GetComponent<BodySourceView>();
     }
 
 
@@ -292,8 +292,10 @@ public class SongList : MonoBehaviour
 
     List<Vector3> GetUserPos() {
         List<Vector3> res = new List<Vector3>();
+        Debug.Log(bodyView.GetPosData());
 
         res = bodyView.GetPosData();
+        Debug.Log(res);
         return res;
     }
 }
