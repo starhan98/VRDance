@@ -31,6 +31,8 @@ public class SongList : MonoBehaviour
     List<string> bones;
     JudgeManager judgeManager;
 
+    BodySourceView bodyView;
+
     private int select_mode = 0; // 0: select song, 1: select mode, 2: select speed
 
     private void Start() { 
@@ -58,6 +60,8 @@ public class SongList : MonoBehaviour
         noMotion = ReadMotion("SelectMotion/no");
         bones = GetAllBones();
         judgeManager = GetComponent<JudgeManager>();
+
+        bodyView = GameObject.Find("BodyView").GetComponent<BodySourceView>();
     }
 
 
@@ -283,14 +287,13 @@ public class SongList : MonoBehaviour
     }
 
     bool IsCapturing() {
-        return false;
+        return bodyView.IsThereHuman();
     }
 
     List<Vector3> GetUserPos() {
         List<Vector3> res = new List<Vector3>();
-        for (int i = 0; i < 16; i++) {
-            res.Add(new Vector3(0,0,0));
-        }
+
+        res = bodyView.GetPosData();
         return res;
     }
 }
