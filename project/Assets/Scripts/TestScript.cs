@@ -50,7 +50,7 @@ public class TestScript : MonoBehaviour
     void Update()
     {
     	//TODO: 여기에 유저의 현재자세 입력
-    	// List<Vector3> userPos = ??????;
+    	List<Vector3> userPos = GetUserPos();
 
         string result = "";
 
@@ -64,5 +64,13 @@ public class TestScript : MonoBehaviour
         }
 
         text.text = result;
+    }
+
+    List<Vector3> GetUserPos() {
+        List<Vector3> res = new List<Vector3>();
+        for (int i = 0; i < 16; i++) {
+            res.Add(new Vector3(i, i+1, i+2));
+        }
+        return res;
     }
 }
