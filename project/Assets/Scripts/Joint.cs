@@ -3,11 +3,17 @@ using UnityEngine;
 [System.Serializable]
 public class Joint
 {
-    public int x;
-    public int y;
-    public int z;
+    public float x;
+    public float y;
+    public float z;
+
+    public Joint(float _x, float _y, float _z) {
+    	x = _x;
+    	y = _y;
+    	z = _z;
+    }
 
     public Vector3 GetVector() {
-    	return new Vector3(x, -y, -z);
+    	return new Vector3(x, y, z);
     }
 }
