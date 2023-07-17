@@ -20,6 +20,8 @@ public class SongInfo : MonoBehaviour
     public string jsonfile_name;
     public double start_offset;
 
+    public int[] score_cnt = new int[5] {0, 0, 0, 0, 0};
+
     public bool shiftRight() {
         if (on_move) {
             return false;;

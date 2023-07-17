@@ -38,7 +38,7 @@ public class HpBarManager : MonoBehaviour
         }
     }
 
-    public void ChangeHp(int offset) {
+    public int ChangeHp(int offset) {
         hp += offset;
 
         if (hp > 100) hp = 100;
@@ -57,5 +57,6 @@ public class HpBarManager : MonoBehaviour
         EndTip.rectTransform.anchoredPosition
             = new Vector2(StartTip.rectTransform.anchoredPosition.x + pixelOffset,
                 StartTip.rectTransform.anchoredPosition.y);
+        return hp;   
     }
 }
