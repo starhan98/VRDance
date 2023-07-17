@@ -68,10 +68,10 @@ public class JudgeManager : MonoBehaviour
 			totalMiss += MissScore(checkDifference(answer[7], user[7]));
 		}
 
-		if (totalMiss <= 4) return 0;
-		if (totalMiss <= 8) return 1;
-		if (totalMiss <= 12) return 2;
-		if (totalMiss <= 17) return 3;
+		if (totalMiss <= 8) return 0;
+		if (totalMiss <= 16) return 1;
+		if (totalMiss <= 24) return 2;
+		if (totalMiss <= 34) return 3;
 		return 4;
 	}
 
