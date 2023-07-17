@@ -46,6 +46,7 @@ public class BodySourceView : MonoBehaviour
     private List<Vector3> jointPosData = new List<Vector3>();
     private string jointDataString = "";
     // public bool isSync = false;
+    private bool isThereHuman;
 
     private void InitPosData()
     {
@@ -91,9 +92,15 @@ public class BodySourceView : MonoBehaviour
         return jointPosData;
     }
 
+    public bool IsThereHuman()
+    {
+        return isThereHuman;
+    }
+
     void Start()
     {
         InitPosData();
+        isThereHuman = false;
     }
     
     void Update () 
@@ -153,6 +160,7 @@ public class BodySourceView : MonoBehaviour
                 if(!_Bodies.ContainsKey(body.TrackingId))
                 {
                     _Bodies[body.TrackingId] = CreateBodyObject(body.TrackingId);
+                    isThereHuman = true;
                 }
                 
                 RefreshBodyObject(body, _Bodies[body.TrackingId]);
