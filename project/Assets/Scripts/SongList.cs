@@ -157,7 +157,7 @@ public class SongList : MonoBehaviour
             move_delay = true;
         }
         if (move_delay) {
-            StartCoroutine(delayKey(0.25f));
+            StartCoroutine(delayKey(1));
         }
     }
 

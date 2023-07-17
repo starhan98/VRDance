@@ -437,6 +437,7 @@ MonoBehaviour:
   bpm: 118
   jsonfile_name: teddyBear
   start_offset: 0
+  is_gameover: 0
   score_cnt: 0000000000000000000000000000000000000000
 --- !u!114 &245524264
 MonoBehaviour:
@@ -1012,6 +1013,7 @@ MonoBehaviour:
   bpm: 117
   jsonfile_name: nightDancer
   start_offset: 0
+  is_gameover: 0
   score_cnt: 0000000000000000000000000000000000000000
 --- !u!114 &673007380
 MonoBehaviour:
@@ -1610,6 +1612,7 @@ MonoBehaviour:
   bpm: 143
   jsonfile_name: ive
   start_offset: 0
+  is_gameover: 0
   score_cnt: 0000000000000000000000000000000000000000
 --- !u!114 &774303484
 MonoBehaviour:
@@ -2536,6 +2539,7 @@ MonoBehaviour:
   bpm: 166
   jsonfile_name: idol
   start_offset: 2.7
+  is_gameover: 0
   score_cnt: 0000000000000000000000000000000000000000
 --- !u!114 &1312129382
 MonoBehaviour:
@@ -2647,6 +2651,7 @@ MonoBehaviour:
   speed: 1
   mode: 0
   panel: {fileID: 54566579}
+  bodyObject: {fileID: 723032823}
 --- !u!114 &1333993927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3261,6 +3266,7 @@ MonoBehaviour:
   bpm: 130
   jsonfile_name: queenCard
   start_offset: 0
+  is_gameover: 0
   score_cnt: 0000000000000000000000000000000000000000
 --- !u!114 &1820253523
 MonoBehaviour:
