@@ -85,7 +85,6 @@ public class JudgeManager : MonoBehaviour
 
 	// perfect: 0, great: 1, good: 2, bad: 5, miss: 15
 	int MissScore(int judgement) {
-		int result = 0;
 		switch (judgement) {
 			case 0:
 				return 0;
