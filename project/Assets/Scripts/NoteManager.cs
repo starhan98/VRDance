@@ -28,13 +28,14 @@ public class NoteManager : MonoBehaviour
     HpBarManager hpBarManager;
 
     public GameObject bodyView;
+    private SongInfo selected_song;
 
     void Start()
     {
         judgeManager = GetComponent<JudgeManager>();
         judgeViewer = GetComponent<JudgeViewer>();
         hpBarManager = GameObject.Find("HpBar").GetComponent<HpBarManager>();
-        SongInfo selected_song = GameObject.Find("SelectedSong").GetComponent<SongInfo>();
+        selected_song = GameObject.Find("SelectedSong").GetComponent<SongInfo>();
         jsonFile = selected_song.jsonfile_name;
         bpm = selected_song.bpm;
         speed = selected_song.speed;
@@ -42,8 +43,9 @@ public class NoteManager : MonoBehaviour
         MVPlayer.GetComponent<VideoPlayer>().playbackSpeed = speed;
 
         hpBarManager.tickTime = 0.05d / speed;
-
+        
         ReadJson();
+
     }
 
     void Update()
@@ -85,11 +87,27 @@ public class NoteManager : MonoBehaviour
             int judgeResult = judgeManager.Judge(userPos);
             Destroy(collision.gameObject);
             judgeViewer.DisplayImage(judgeResult);
-            if (judgeResult == 0) hpBarManager.ChangeHp(15);
-            else if (judgeResult == 1) hpBarManager.ChangeHp(10);
-            else if (judgeResult == 2) hpBarManager.ChangeHp(15);
-            else if (judgeResult == 3) hpBarManager.ChangeHp(0);
-            else hpBarManager.ChangeHp(-5);
+            if (judgeResult == 0) {
+                hpBarManager.ChangeHp(15);
+                selected_song.score_cnt[0]++;
+            }
+            else if (judgeResult == 1) {
+                hpBarManager.ChangeHp(10);
+                selected_song.score_cnt[1]++;
+            }
+            else if (judgeResult == 2) {
+                hpBarManager.ChangeHp(15);
+                selected_song.score_cnt[2]++;
+                }
+            else if (judgeResult == 3) {
+                hpBarManager.ChangeHp(0);
+                selected_song.score_cnt[3]++;
+            }
+            else {
+                hpBarManager.ChangeHp(-5);
+                selected_song.score_cnt[4]++;
+            }
+            selected_song.score_cnt = new int[5] {9, 8, 7, 6, 5};
         }
     }
 
