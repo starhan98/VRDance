@@ -44,6 +44,7 @@ public class BodySourceView : MonoBehaviour
     };
 
     private List<Vector3> jointPosData = new List<Vector3>();
+    private string jointDataString = "";
     // public bool isSync = false;
 
     private void InitPosData()
@@ -51,6 +52,17 @@ public class BodySourceView : MonoBehaviour
         for(int i  = 0; i < 16; i++){
             jointPosData.Add(new Vector3(0,0,0));
         }
+    }
+
+    private void PrintPosData()
+    {
+        jointDataString = "";
+        for(int i = 0; i < 16; i++)
+        {
+            jointDataString += i.ToString() + " : " + jointPosData[i].ToString() + "\n";
+            
+        }
+        Debug.Log(jointDataString);
     }
 
     public void SetPosData(Kinect.Body body)
@@ -71,6 +83,7 @@ public class BodySourceView : MonoBehaviour
         jointPosData[13] = GetVector3FromJoint(body.Joints[Kinect.JointType.SpineMid]);
         jointPosData[14] = GetVector3FromJoint(body.Joints[Kinect.JointType.SpineShoulder]);
         jointPosData[15] = GetVector3FromJoint(body.Joints[Kinect.JointType.Head]);
+        PrintPosData();
     }
 
     public List<Vector3> GetPosData()
