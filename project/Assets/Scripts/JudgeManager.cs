@@ -46,28 +46,27 @@ public class JudgeManager : MonoBehaviour
 		return bones;
 	}
 
-	int CalcJudge(List<Vector3> answer, List<Vector3> user, List<string> checkBones) {
+	public int CalcJudge(List<Vector3> answer, List<Vector3> user, List<string> checkBones) {
 		int totalMiss = 0;
 		if (checkBones.Contains("SP"))
-			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[0], user[0]));
 		if (checkBones.Contains("LUA"))
-			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[0], user[0]));
 		if (checkBones.Contains("LLA"))
-			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[0], user[0]));
 		if (checkBones.Contains("RUA"))
-			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[0], user[0]));
 		if (checkBones.Contains("RLA"))
-			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[0], user[0]));
 		if (checkBones.Contains("LUL"))
-			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[0], user[0]));
 		if (checkBones.Contains("LLL"))
-			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[0], user[0]));
 		if (checkBones.Contains("RUL"))
-			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[0], user[0]));
 		if (checkBones.Contains("RLL")) {
-			titalMiss += MissScore(checkDifference(answer[0], user[0]));
+			totalMiss += MissScore(checkDifference(answer[0], user[0]));
 		}
-		return leastScore;
 
 		if (totalMiss <= 4) return 0;
 		if (totalMiss <= 8) return 1;
@@ -96,8 +95,7 @@ public class JudgeManager : MonoBehaviour
 				return 2;
 			case 3:
 				return 5;
-			case 4:
-				return 15;
 		}
+		return 15;
 	}
 }

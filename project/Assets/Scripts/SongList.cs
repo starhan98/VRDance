@@ -24,8 +24,12 @@ public class SongList : MonoBehaviour
     public int mode = 0;
     public Image panel;
 
-    
-
+    List<Vector3> leftMotion;
+    List<Vector3> rightMotion;
+    List<Vector3> okMotion;
+    List<Vector3> noMotion;
+    List<string> bones;
+    JudgeManager judgeManager;
 
     private int select_mode = 0; // 0: select song, 1: select mode, 2: select speed
 
@@ -47,6 +51,13 @@ public class SongList : MonoBehaviour
         }
         song_feature.text = cur_song.feature;
         panel.enabled = false;
+
+        leftMotion = ReadMotion("SelectMotion/left");
+        rightMotion = ReadMotion("SelectMotion/right");
+        okMotion = ReadMotion("SelectMotion/ok");
+        noMotion = ReadMotion("SelectMotion/no");
+        bones = GetAllBones();
+        judgeManager = GetComponent<JudgeManager>();
     }
 
 
@@ -237,4 +248,29 @@ public class SongList : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
+    List<Vector3> ReadMotion(string filePath) {
+        TextAsset jsonText = Resources.Load<TextAsset>(filePath);
+        string jsonString = jsonText.ToString();
+
+        NoteInfo noteInfo = JsonUtility.FromJson<NoteInfo>(jsonString);
+        List<Vector3> vectorList = new List<Vector3>();
+        foreach (Joint joint in noteInfo.joints) {
+            vectorList.Add(joint.GetVector());
+        }
+        return vectorList;
+    }
+
+    List<string> GetAllBones() {
+        List<string> boneList = new List<string>();
+        boneList.Add("SP");
+        boneList.Add("LUA");
+        boneList.Add("LLA");
+        boneList.Add("RUA");
+        boneList.Add("RLA");
+        boneList.Add("LUL");
+        boneList.Add("LLL");
+        boneList.Add("RUL");
+        boneList.Add("RLL");
+        return boneList;
+    }
 }
