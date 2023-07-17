@@ -11,6 +11,8 @@ public class MapMaker : MonoBehaviour
 
     public GameObject bodyView;
 
+    int clickCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,8 @@ public class MapMaker : MonoBehaviour
         result = new NoteInfos();
         result.notes = new List<NoteInfo>();
         fileName = "Assets/Resources/test.json";
+
+        clickCount = 0;
     }
 
     // Update is called once per frame
@@ -26,6 +30,8 @@ public class MapMaker : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
         	addNote();
         	Debug.Log("mouse input");
+            clickCount++;
+            Debug.Log(clickCount);
         }
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
         	makeJson();
