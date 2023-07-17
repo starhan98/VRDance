@@ -67,6 +67,10 @@ public class SongList : MonoBehaviour
         if(move_delay) {
             return;
         }
+
+        List<Vector3> userPos = GetUserPos();
+        List<Vector3> userBones = judgeManager.CalcBones(userPos);
+
         if (Input.GetKeyDown(KeyCode.Return)) {
             Select();
             move_delay = true;
@@ -257,7 +261,7 @@ public class SongList : MonoBehaviour
         foreach (Joint joint in noteInfo.joints) {
             vectorList.Add(joint.GetVector());
         }
-        return vectorList;
+        return judgeManager.CalcBones(vectorList);
     }
 
     List<string> GetAllBones() {
@@ -272,5 +276,13 @@ public class SongList : MonoBehaviour
         boneList.Add("RUL");
         boneList.Add("RLL");
         return boneList;
+    }
+
+    List<Vector3> GetUserPos() {
+        List<Vector3> res = new List<Vector3>();
+        for (int i = 0; i < 16; i++) {
+            res.Add(new Vector3(0,0,0));
+        }
+        return res;
     }
 }
