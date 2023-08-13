@@ -118,7 +118,7 @@ public class SongList : MonoBehaviour
         } else if ((IsCapturing() && judgeManager.CalcJudge(rightMotion, userBones, bones) == 0)
             || Input.GetKeyDown(KeyCode.RightArrow)) {
             if (select_mode == 0) {
-                if (cur_song_index < 4) {
+                if (cur_song_index < 5) {
                     for(int i = 0; i < songs.Length; i++) {
                         shifting &= songs[i].GetComponent<SongInfo>().shiftRight();
                     }
@@ -157,7 +157,7 @@ public class SongList : MonoBehaviour
             move_delay = true;
         }
         if (move_delay) {
-            StartCoroutine(delayKey(0.25f));
+            StartCoroutine(delayKey(0.5f));
         }
     }
 
@@ -292,10 +292,8 @@ public class SongList : MonoBehaviour
 
     List<Vector3> GetUserPos() {
         List<Vector3> res = new List<Vector3>();
-        Debug.Log(bodyView.GetPosData());
 
         res = bodyView.GetPosData();
-        Debug.Log(res);
         return res;
     }
 }
