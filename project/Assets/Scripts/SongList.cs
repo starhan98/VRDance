@@ -292,10 +292,8 @@ public class SongList : MonoBehaviour
 
     List<Vector3> GetUserPos() {
         List<Vector3> res = new List<Vector3>();
-        Debug.Log(bodyView.GetPosData());
 
         res = bodyView.GetPosData();
-        Debug.Log(res);
         return res;
     }
 }

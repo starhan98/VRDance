@@ -79,9 +79,7 @@ public class NoteManager : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision) {
         if (collision.CompareTag("note")) {
             List<Vector3> userPos = new List<Vector3>();
-            // TODO: userPos 입력해주세요
             userPos = bodyView.GetComponent<BodySourceView>().GetPosData();
-            Debug.Log(userPos[0]);
 
             // int judgeResult = 2;
             int judgeResult = judgeManager.Judge(userPos);
