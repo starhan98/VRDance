@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NoteObjectProp : MonoBehaviour
 {
-	public int time;
+	public float time;
 	public string image;
 	public List<Vector3> joints;
 	public List<string> answerBones;

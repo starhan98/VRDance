@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class NoteInfo
 {
-	public int time;
+	public float time;
 	public string image;
 	public List<Joint> joints;
 	public List<string> answerBones;

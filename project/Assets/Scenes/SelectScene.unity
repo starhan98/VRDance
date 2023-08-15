@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -435,8 +435,10 @@ MonoBehaviour:
   stop_pos: {fileID: 2800000, guid: 93256c35a5cda4247a926149357b561c, type: 3}
   thumbnail: {fileID: 2800000, guid: a1e6847a145eefc488200889c3055908, type: 3}
   bpm: 118
-  jsonfile_name: teddyBear
-  start_offset: 0
+  jsonfile_name: TeddyBear
+  start_offset: 8
+  start_offset_slow: 12.4
+  start_offset_fast: 6.6
   is_gameover: 0
   score_cnt: 0000000000000000000000000000000000000000
 --- !u!114 &245524264
@@ -1011,8 +1013,10 @@ MonoBehaviour:
   stop_pos: {fileID: 2800000, guid: fa3ab2ac81e2da94792aa55104ddf75c, type: 3}
   thumbnail: {fileID: 2800000, guid: af3ba92ea1d1a044496508f7dc123a63, type: 3}
   bpm: 117
-  jsonfile_name: nightDancer
-  start_offset: 0
+  jsonfile_name: NightDancer
+  start_offset: 5.5
+  start_offset_slow: 7.3
+  start_offset_fast: 5
   is_gameover: 0
   score_cnt: 0000000000000000000000000000000000000000
 --- !u!114 &673007380
@@ -1610,8 +1614,10 @@ MonoBehaviour:
   stop_pos: {fileID: 2800000, guid: dc0d0a8d856a4cb4eb56be16d3a452fe, type: 3}
   thumbnail: {fileID: 2800000, guid: d2f4684127df5d04bb4f34f31f97b11b, type: 3}
   bpm: 143
-  jsonfile_name: ive
-  start_offset: 0
+  jsonfile_name: EvePsycheBlueBeard
+  start_offset: 5.75
+  start_offset_slow: 7.7
+  start_offset_fast: 5.15
   is_gameover: 0
   score_cnt: 0000000000000000000000000000000000000000
 --- !u!114 &774303484
@@ -2538,7 +2544,9 @@ MonoBehaviour:
   thumbnail: {fileID: 2800000, guid: 2ff08aa2332dd4d4b9c881148eba9eab, type: 3}
   bpm: 166
   jsonfile_name: idol
-  start_offset: 2.7
+  start_offset: 6.35
+  start_offset_slow: 9.2
+  start_offset_fast: 5.5
   is_gameover: 0
   score_cnt: 0000000000000000000000000000000000000000
 --- !u!114 &1312129382
@@ -2853,9 +2861,11 @@ MonoBehaviour:
   speed: 0
   stop_pos: {fileID: 2800000, guid: 517efa62d33d56149a634cd91d44cd1e, type: 3}
   thumbnail: {fileID: 2800000, guid: b8a9dffe7012b824f87c8bf00061d546, type: 3}
-  bpm: 166
-  jsonfile_name: idol
-  start_offset: 2.7
+  bpm: 105
+  jsonfile_name: Teuk
+  start_offset: 6.9
+  start_offset_slow: 10.3
+  start_offset_fast: 5.95
   is_gameover: 0
   score_cnt: 0000000000000000000000000000000000000000
 --- !u!114 &1457579768
@@ -3367,8 +3377,10 @@ MonoBehaviour:
   stop_pos: {fileID: 2800000, guid: 9a582e2f5dde2d64fb80dcbbb1dd70b4, type: 3}
   thumbnail: {fileID: 2800000, guid: 16966edf2ef3bc94784ba404976be028, type: 3}
   bpm: 130
-  jsonfile_name: queenCard
-  start_offset: 0
+  jsonfile_name: QueenCard
+  start_offset: 5.85
+  start_offset_slow: 7.9
+  start_offset_fast: 5.2
   is_gameover: 0
   score_cnt: 0000000000000000000000000000000000000000
 --- !u!114 &1820253523

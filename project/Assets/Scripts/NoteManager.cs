@@ -39,7 +39,17 @@ public class NoteManager : MonoBehaviour
         jsonFile = selected_song.jsonfile_name;
         bpm = selected_song.bpm;
         speed = selected_song.speed;
-        startOffset = selected_song.start_offset / speed + 3.8;
+        switch (speed) {
+        case 0.5f:
+            startOffset = selected_song.start_offset_slow;
+            break;
+        case 1.5f:
+            startOffset = selected_song.start_offset_fast;
+            break;
+        default:
+            startOffset = selected_song.start_offset;
+            break;
+        }
         MVPlayer.GetComponent<VideoPlayer>().playbackSpeed = speed;
 
         hpBarManager.tickTime = 0.1d / speed;
