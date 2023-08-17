@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class Result : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Result : MonoBehaviour
     public Texture C_icon;
     public Texture F_icon;
     public RawImage result_icon;
+    public Image panel;
 
     public TextMeshProUGUI[] score_texts;
     public AudioSource SFX;
@@ -109,6 +111,25 @@ public class Result : MonoBehaviour
             result_icon.texture = F_icon;
         }
         result_icon.enabled = true;
+
+        t = 0f;
+        while (t < 1f) {
+            t += Time.deltaTime / 3f;
+            yield return null;
+        }
+
+        t = 0f;
+        duration = 1.5f;
+        panel.enabled = true;
+
+        while (t < 1f) {
+            t += Time.deltaTime / duration;
+            panel.color = new Color(0, 0, 0, t);
+            yield return null;
+        }
+        panel.color = new Color(0, 0, 0, 1);
+        Destroy(GameObject.Find("SelectedSong"));
+        SceneManager.LoadScene("SelectScene");
     }
  
     private int[] calAccuracy(int[] score_cnt) {
