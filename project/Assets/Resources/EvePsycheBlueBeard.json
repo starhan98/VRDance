@@ -86,7 +86,7 @@
              }
           ],
           "answerBones":[
-             
+            "LUA","LLA","RUA","RLA"
           ]
        },
        {
@@ -175,7 +175,7 @@
              }
           ],
           "answerBones":[
-             
+            "LUA","LLA","RUA","RLA"
           ]
        },
        {
@@ -264,7 +264,7 @@
              }
           ],
           "answerBones":[
-             
+            "LUA","LLA","RUA","RLA"
           ]
        },
        {
@@ -353,7 +353,7 @@
              }
           ],
           "answerBones":[
-             
+            "LUA","LLA","RUA","RLA"
           ]
        },
        {
@@ -442,7 +442,7 @@
              }
           ],
           "answerBones":[
-             
+            "SP","LUA","LLA","RUA","RLA"
           ]
        },
        {
@@ -531,7 +531,7 @@
              }
           ],
           "answerBones":[
-             
+            "SP","LUA","LLA","RUA","RLA"
           ]
        },
        {
@@ -620,7 +620,7 @@
              }
           ],
           "answerBones":[
-             
+            "SP","LUA","LLA","RUA","RLA","LUL","LLL","RUL","RLL"
           ]
        },
        {
@@ -709,7 +709,7 @@
              }
           ],
           "answerBones":[
-             
+            "SP","LUA","LLA","RUA","RLA","LUL","LLL","RUL","RLL"
           ]
        },
        {
@@ -798,7 +798,7 @@
              }
           ],
           "answerBones":[
-             
+            "LUA","LLA","RUA","RLA","LUL","RUL"
           ]
        },
        {
@@ -887,7 +887,7 @@
              }
           ],
           "answerBones":[
-             
+            "LUA","LLA","RUA","RLA","LUL","RUL"
           ]
        },
        {
@@ -976,7 +976,7 @@
              }
           ],
           "answerBones":[
-             
+            "LUA","LLA","RUA","RLA","LUL","RUL"
           ]
        },
        {
@@ -1065,7 +1065,7 @@
              }
           ],
           "answerBones":[
-             
+            "LUA","RUA","LUL","RUL"
           ]
        },
        {
@@ -1154,7 +1154,7 @@
              }
           ],
           "answerBones":[
-             
+            "LUA","RUA","LUL","RUL"
           ]
        },
        {
@@ -1243,7 +1243,7 @@
              }
           ],
           "answerBones":[
-             
+            "LUA","RUA","LUL","RUL"
           ]
        },
        {
@@ -1332,7 +1332,7 @@
              }
           ],
           "answerBones":[
-             
+            "SP","LUA","LLA","RUA","RLA","LUL","LLL","RUL","RLL"
           ]
        },
        {
@@ -1421,7 +1421,7 @@
              }
           ],
           "answerBones":[
-             
+            "LUA","LLA","RUA","RLA"
           ]
        },
        {
@@ -1510,7 +1510,7 @@
              }
           ],
           "answerBones":[
-             
+            "LUA","LLA","RUA","RLA"
           ]
        },
        {
@@ -1599,7 +1599,7 @@
              }
           ],
           "answerBones":[
-             
+            "LUA","LLA","RUA","RLA"
           ]
        },
        {
@@ -1688,7 +1688,7 @@
              }
           ],
           "answerBones":[
-             
+            "LUA","LLA","RUA","RLA"
           ]
        },
        {
@@ -1777,7 +1777,7 @@
              }
           ],
           "answerBones":[
-             
+            "SP","LUA","LLA","RUA","RLA"
           ]
        },
        {
@@ -1866,7 +1866,7 @@
              }
           ],
           "answerBones":[
-             
+            "SP","LUA","LLA","RUA","RLA"
           ]
        },
        {
@@ -1955,7 +1955,7 @@
              }
           ],
           "answerBones":[
-             
+            "SP","LUA","LLA","RUA","RLA","LUL","LLL","RUL","RLL"
           ]
        },
        {
@@ -2044,7 +2044,7 @@
              }
           ],
           "answerBones":[
-             
+            "SP","LUA","LLA","RUA","RLA","LUL","LLL","RUL","RLL"
           ]
        },
        {
@@ -2133,7 +2133,7 @@
              }
           ],
           "answerBones":[
-             
+            "SP","LUA","RUA","LUL","RUL"
           ]
        },
        {
@@ -2222,7 +2222,7 @@
              }
           ],
           "answerBones":[
-             
+            "SP","LUA","RUA","LUL","RUL"
           ]
        },
        {
@@ -2311,7 +2311,7 @@
              }
           ],
           "answerBones":[
-             
+            "SP","LUA","RUA","LUL","RUL"
           ]
        },
        {
@@ -2400,7 +2400,7 @@
              }
           ],
           "answerBones":[
-             
+            "SP","LUA","RUA","LUL","RUL"
           ]
        }
     ]
