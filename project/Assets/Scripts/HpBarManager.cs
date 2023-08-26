@@ -27,7 +27,7 @@ public class HpBarManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!started) return;
         

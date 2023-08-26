@@ -74,6 +74,9 @@ public class NoteManager : MonoBehaviour
         	GameObject t_note = Instantiate(NotePrefab, NoteAppearLocation.position, Quaternion.identity);
             t_note.GetComponent<NoteObjectProp>().Initiate(noteInfos.notes[0]);
             Sprite sprite = Resources.Load<Sprite>("Notes/" + jsonFile + "/" + noteInfos.notes[0].image);
+
+            //Sprite sprite = Resources.Load<Sprite>("empty2");
+
             t_note.GetComponent<Image>().sprite = sprite;
             noteInfos.notes.RemoveAt(0);
         	t_note.transform.SetParent(this.transform);
